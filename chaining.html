@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+       var cal =function() {
+           this.n1=0;
+           this.n2=0;
+       }
+       cal.prototype.first=function(n1) { //object.prototype
+           this.n1=n1;
+       }
+       cal.prototype.second=function(n2) { // object inherit prop & methods from prototype
+           this.n2=n2;
+       }
+       cal.prototype.total=function() {
+           var total=this.n1+this.n2;
+           console.log("total is"+ total);
+       }
+       var data=new cal(); // creating a new object
+            data.first(5);
+            data.second(4);
+            data.total();  
+</script>
+</head>
+<body>
+    
+</body>
+</html>
