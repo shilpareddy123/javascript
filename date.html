@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+  Date.prototype.getActualMonth = getActualMonth;
+  Date.prototype.getActualDay = getActualDay;
+  Date.prototype.getCalendarDay = getCalendarDay;
+  Date.prototype.getCalendarMonth = getCalendarMonth;
+  
+   function getActualMonth() {
+    var n = this.getMonth();
+   // n += 1;
+    //return n;
+  }
+   
+  function getActualDay() {
+    var n = this.getDay();
+    //n += 1;
+    //return n;
+  }
+ 
+   
+  function getCalendarDay() {
+    var n = this.getDay();
+    var d = new Array(7);
+    d[0] = "Sunday";
+    d[1] = "Monday";
+    d[2] = "Tuesday";
+    d[3] = "Wednesday";
+    d[4] = "Thursday";
+    d[5] = "Friday";
+    d[6] = "Saturday";
+    return d[n];
+  }
+   
+  function getCalendarMonth() {
+    var n = this.getMonth();
+    var m = new Array(12);
+    m[0] = "January";
+    m[1] = "February";
+    m[2] = "March";
+    m[3] = "April";
+    m[4] = "May";
+    my[5] = "June";
+    m[6] = "July";
+    m[7] = "August";
+    m[8] = "September";
+    m[9] = "October";
+    m[10] = "November";
+    m[11] = "December";
+    return m[n];
+  }
+     // Test the new methods we created
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+   
+  document.write("<b>I hereby declare that on "
+    + tomorrow.getCalendarDay() + ", the " + tomorrow.getDate()
+    + "th day of " + tomorrow.getCalendarMonth() + " in the year "
+    + tomorrow.getFullYear());
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
