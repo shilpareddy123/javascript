@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script>
+        function calculate(oper) {
+                var a=Number(document.cal.num1.value);
+                var b=Number(document.cal.num2.value);
+            switch(oper) {   //switch case statement
+                case "add":
+                var c=a+b;
+                break;
+                case "sub":
+                var c=a-b;
+                break;
+                case "mul":
+                var c=a*b;
+                break;
+                case "div":
+                var c=a/b;
+                break;
+            }
+            document.cal.res.value=c;
+        }
+    </script>
+</head>
+<body>
+    <form name="cal">
+       first num:<input type="text" name="num1"/><br/>
+       second num:<input type="text" name="num2"/><br/>
+
+select operation:
+<select name="-select-" onchange="calculate(this.value)"> 
+    
+            <option> -select- </option>
+                    <option value="add">addition</option>
+                    <option value="sub">subtraction</option>
+                    <option value="mul">multiplication</option>
+                    <option value="div">division</option>
+        </select> 
+             <input type="text"  name="res"></input>
+    </form>
+    </body>
+    </html>
