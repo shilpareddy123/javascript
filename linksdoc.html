@@ -1,0 +1,53 @@
+/** 
+*@Filename:linkscount.html
+*@Date:05-10-2016
+*@Purpose:counting number of links from documentn
+*@Created By:Shilpa K N
+*/
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Click the button to display the number of links in the document.</p><br>
+    <a href="http://www.w3schools.com/asp/asp_examples.asp"></a><br>
+    <a href="demo.com"></a><br>
+    <a href="https://mail.google.com"></a><br>
+    <button onclick="myFunction()">Try it</button>
+
+   
+    <p id="demo" </p>
+        <script>
+function myFunction() {
+     
+   var anchorLength=document.links.length;
+   document.getElementById("demo").innerHTML='linkscount is'+" "+anchorLength;
+   //checking for valid links
+   var pattern=/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+  var array;
+   for(var i=0;i<=anchorLength;i++){
+   
+       if(pattern.test(document.links[i].href))
+       {   
+           
+            alert('correct link->'+document.links[i].href);
+        
+           console.log('correct link' +document.links[i].href);
+       }else{
+            alert('wrong link->'+document.links[i].href);
+       
+           console.log('wrong link'+document.links[i].href);
+       }
+   
+}
+}
+</script>
+
+</body>
+
+</html>
