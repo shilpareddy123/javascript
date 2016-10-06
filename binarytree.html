@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+        function binarysearch() {
+            this.root = null;
+        }
+
+        function Node(val) {
+            this.value = val;
+            this.left = null;
+            this.right = null;
+        }
+        binarysearch.prototype.push = function(val) {
+            var root = this.root;
+            if (!root) {
+                this.root = new Node(val)
+                document.write(this.root.value);
+                return;
+            }
+            var currentNode = root;
+            var newNode = new Node(val);
+            while (currentNode) {
+                if (val < currentNode.value) {
+                    if (!currentNode.left) {
+                        currentNode.left = newNode;
+                        document.write(currentNode.left.value);
+                        break;
+                    } else {
+                        currentNode = currentNode.left;
+                    }
+                } else {
+                    if (!currentNode.right) {
+                        currentNode.right = newNode;
+                        document.write(currentNode.right.value);
+                        break;
+                    } else {
+                        currentNode = currentNode.right;
+                    }
+                }
+            }
+        }
+        var bt = new binarysearch();
+        bt.push(6);
+        bt.push(3);
+        bt.push(2);
+        bt.push(4);
+        bt.push(1);
+        bt.push(5);
+    </script>
+</head>
+
+<body>
+    <h2>binary tree</h2>
+</body>
+
+</html>
