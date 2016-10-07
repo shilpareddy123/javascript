@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var daynames; //declare variable name
+        now = new Date(); //initialize date object
+        Date.prototype.getUTCDayName = function() {
+            daynames = new Array('sunday', 'monday', 'Tuesday', 'Wednesday', 'Thursday',
+                'Friday', 'Saturday');
+            return daynames[this.getUTCDay()];
+        };
+        Date.prototype.getNextDay = function() {
+            return daynames[this.getUTCDay() + 1]; //returns nextday
+        };
+        document.write("today :" + now.getUTCDayName() + "<br>");
+        document.write("Tomorrow :" + now.getNextDay());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
