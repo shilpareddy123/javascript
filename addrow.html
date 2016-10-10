@@ -1,0 +1,75 @@
+/**
+*@Filename:addrow.html
+*@Date:07-10-2016
+*@Purpose:adding Rows and columns
+*@Created By:Shilpa K N
+*/
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Rows and Columns</title>
+
+    <script>
+        function addRow() {
+            var table = document.getElementById("my-table");
+            row = table.insertRow(table.rows.length);
+            var i;
+            for (i = 0; i < table.rows[0].cells.length; i++) {
+                createCell(row.insertCell(i), i, 'row');
+            }
+        }
+
+        function createCell(cell, text, style) {
+            var div = document.createElement('div'), // create DIV element
+                txt = document.createTextNode(text); // create text node
+            div.appendChild(txt); // append text node to the DIV
+            div.setAttribute('class', style); // set DIV class attribute,class-name of the attribute as a string
+            div.setAttribute('className', style); // set DIV class attribute for IE (?!)
+            cell.appendChild(div); // append DIV to the table cell
+        }
+
+        function addColumn() {
+            var table = document.getElementById("my-table");
+            var i;
+            // open loop for each row and append cell
+            for (i = 0; i < table.rows.length; i++) {
+                createCell(table.rows[i].insertCell(table.rows[i].cells.length), i, 'col');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <input type="button" onclick="addRow()" value="addRow"></input>
+        <input type="button" onclick="addColumn()" value="addColumn"></input>
+
+        <table id="my-table" align="center" border="2">
+            <thead>
+                <tr>
+                    <th>subject</th>
+                    <th>marks</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </center>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-/** 
+/**
 *@Filename:linkscount.html
 *@Date:05-10-2016
 *@Purpose:counting number of links from documentn
@@ -20,30 +20,30 @@
     <a href="https://mail.google.com"></a><br>
     <button onclick="myFunction()">Try it</button>
 
-   
+
     <p id="demo" </p>
         <script>
 function myFunction() {
-     
+
    var anchorLength=document.links.length;
    document.getElementById("demo").innerHTML='linkscount is'+" "+anchorLength;
    //checking for valid links
    var pattern=/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
   var array;
    for(var i=0;i<=anchorLength;i++){
-   
+
        if(pattern.test(document.links[i].href))
-       {   
-           
+       {
+
             alert('correct link->'+document.links[i].href);
-        
+
            console.log('correct link' +document.links[i].href);
        }else{
             alert('wrong link->'+document.links[i].href);
-       
+
            console.log('wrong link'+document.links[i].href);
        }
-   
+
 }
 }
 </script>
